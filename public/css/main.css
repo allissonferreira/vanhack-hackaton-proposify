@@ -28,6 +28,7 @@
 		justify-content: center;
 		width: 100%;
 	}
+	.btn-sm {font-size: 11px;}
 
 /**
 	Sidebars
@@ -49,6 +50,7 @@
 	.sidebar ul {
 		margin: 0;
 		padding: 0;
+		list-style: none;
 	}
 	.sidebar ul li {
 		border-bottom: 1px solid #cbcbcb;
@@ -57,8 +59,8 @@
 		font-size: 12px;
 	}
 
-	.sidebar ul li:first-child {padding: 0;}
-	.sidebar ul li:first-child button {
+	.sidebar.left ul li:first-child {padding: 0;}
+	.sidebar.left ul li:first-child button {
 		display: inline-block;
 		padding: 0;
 		margin: 0;
@@ -68,9 +70,49 @@
 		height: 40px;
 		background: #f4f3f3;
 	}
-	.sidebar ul li:first-child button:first-child {border-right: 1px solid #cbcbcb;}
-	.sidebar ul li:first-child button:hover {background: #00b8d1;}
-	.sidebar ul li:first-child button:hover img {filter: brightness(0) invert(1);}
+	.sidebar.left ul li:first-child button:first-child {border-right: 1px solid #cbcbcb;}
+	.sidebar.left ul li:first-child button:hover {background: #00b8d1;}
+	.sidebar.left ul li:first-child button:hover img {filter: brightness(0) invert(1);}
+
+	.sidebar.right ul li {
+		border: none;
+		padding: 0;
+		font-size: 11px;
+		cursor: default;
+	}
+	.sidebar.right > ul > li > span {
+		border-bottom: 1px solid #cbcbcb;
+		padding: 10px 0;
+		display: block;
+		font-weight: 500;
+		color: #004053;
+		background: #ececec;
+	}
+	.sidebar.right ul li ul {
+		display: block;
+		padding: 15px 0 5px;
+	}
+	.sidebar.right ul li ul li {
+		text-align: left;
+		border-bottom: 1px solid #cbcbcb;
+		padding: 0 15px;
+	}
+	.sidebar.right ul li ul li h2 {
+		display: block;
+		margin: 0 0 10px;
+		font-size: 12px;
+	}
+	.sidebar.right ul li ul li span {
+		display: block;
+		margin-bottom: 10px;
+		color: #668c98;
+		text-transform: none;
+	}
+	.sidebar.right ul li ul li span strong {
+		color: #004053;
+		display: block;
+		font-weight: 500;
+	}
 
 /**
 	Main area
@@ -85,13 +127,6 @@
 		margin: 20px 0 60px;
 		padding: 20px;
 	}
-	#editor {
-		border: none;
-		position: relative;
-		font-size: 14px;
-		padding: 0;
-		min-height: 250px;
-	}
 	.customGridPlacement {
 		justify-content: center;
 		margin-top: 20px;
@@ -101,12 +136,15 @@
 		margin-top: 30px;
 	}
 	.realtimeEditor {
-		padding-bottom: 5px;
 		min-height: 66px;
-		
-		border-bottom: 1px solid #ddd;
-		color: #009688;
-		-webkit-text-fill-color: rgba(0,0,0,0.65);
+		color: #000000;
+		-webkit-text-fill-color: rgba(0,0,0,1);
+		/**/
+		border: none;
+		position: relative;
+		font-size: 14px;
+		padding: 0;
+		min-height: 250px;
 	}
 	.realtimeEditor:focus {
 		outline: none;
@@ -183,5 +221,4 @@
 		}
 		header p {font-size: 12px;}
 		.sidebar {display: none;}
-		.btn-sm {font-size: 11px;}
 	}

@@ -42,33 +42,46 @@
 						<div class="sidebar left">
 							<ul>
 								<li>
-									<button><img src="img/add.svg" alt="Add a new section" title="Add a new section" /></button><button><img src="img/archive.svg" alt="Import section from library" title="Import section from library" /></button>
+									<button id="addPage"><img src="img/add.svg" alt="Add a new section" title="Add a new section" /></button><button><img src="img/archive.svg" alt="Import section from library" title="Import section from library" /></button>
 								</li>
 								<li>Page 1</li>
-								<li>Page 2</li>
-								<li>Page 3</li>
-								<li>Page 4</li>
-								<li>Page 5</li>
-								<li>Page 6</li>
-								<li>Page 7</li>
-								<li>Page 8</li>
-								<li>Page 9</li>
-								<li>Page 10</li>
 							</ul>
 						</div>
 					</div>
 
-					<div class="col-12 col-lg-6 offset-lg-1 pt-3">
-						<h2>Page 1</h2>
-						<div class="wrapper-editor">
-							<div id="editor" class="realtimeEditor is-focused" ondragstart="return false" contenteditable="true" spellcheck="false">
-								<div><br></div>
+					<!-- Wrapper where we will add the pages -->
+					<div class="col-12 col-lg-6 offset-lg-1 pt-3 pages-wrapper">
+						<div id="page-1" class="page">
+							<h2>Page 1</h2>
+							<div class="wrapper-editor">
+								<div id="editor1" class="realtimeEditor is-focused" ondragstart="return false" contenteditable="true" spellcheck="false">
+									<div><br></div>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-12 col-lg-2 offset-lg-1 pr-0">
-						<div class="sidebar"></div>
+						<div class="sidebar right">
+							<ul>
+								<li class="text-center text-uppercase">
+									<span>Proposal details</span>
+									<ul>
+										<li>
+											<h2>Name & Client</h2>
+											<span class="text-normal">
+												Name
+												<strong>Allisson Ferreira</strong>
+											</span>
+											<span class="text-normal">
+												Client
+												<strong>Proposify</strong>
+											</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -84,20 +97,10 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
 		<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
-		<!-- custom JavaScript -->
-		<script>
-			var socket = io.connect();
-			var editor = {
-				id: 'editor',
-				projectId: 2,
-				room: 'vanhack-hackathon',
-				text: [],
-				custom: {
-					referenceId: 21,
-					componentId: 22
-				}
-			};
-			new realtimeEditor(editor);
-		</script>
+		<!-- Custom class -->
+		<script src="classes/editor.js"></script>
+
+		<!-- Custom JavaScript -->
+		<script src="js/main.js"></script>
 	</body>
 </html>
