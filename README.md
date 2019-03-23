@@ -14,6 +14,6 @@ Clone this repository and execute:
 Then, to start the server:
 `npm start`
 
-Now just go to http://localhost:2000 and se the project :)
+Now just go to http://localhost and see the project :)
 
 Thanks!
