@@ -9,10 +9,10 @@ This project was made by using HTML, CSS and Javascript in the front-end. It als
 ## Run the project
 
 Clone this repository and execute:
-### `npm install`
+`npm install`
 
 Then, to start the server:
-### `node start`
+`node start`
 
 Now just go to http://localhost:2000 and se the project :)
 
