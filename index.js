@@ -21,6 +21,6 @@ realtimeEditor.onSave(function (data) {
 });
 
 //Start the server
-http.listen(2000, function () {
-	console.log('listening on *:2000');
+http.listen(80, function () {
+	console.log('listening on *:80');
 });
