@@ -6,8 +6,8 @@ var express 		= require('express');
 	realtimeEditor 	= require('realtime-editor');	
 
 //Folders used in index.html
-app.use(express.static('public'));
 app.use("/node_modules", express.static(__dirname + "/node_modules"));
+app.use(express.static(__dirname + '/public'));
 
 //App routing
 app.get('/', function (req, res) {
