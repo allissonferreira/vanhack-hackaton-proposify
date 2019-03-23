@@ -1,116 +1,187 @@
-body {color: #668c98; background: #ededed; font-family: 'Montserrat', sans-serif; overflow: hidden; padding-top: 48px;}
+/**
+	General
+	**/
+	body {
+		color: #668c98;
+		background: #ededed;
+		font-family: 'Montserrat', sans-serif;
+		overflow: hidden;
+		padding-top: 48px;
+	}
 
-header {border-bottom: 1px solid #cbcbcb; width: 100%; height: 48px; position: fixed; top: 0; left: 0;}
-header p {font-size: 18px; font-weight: bold; margin: 0; display: flex; justify-content: center; width: 100%;}
+/**
+	Header
+	**/
+	header {
+		border-bottom: 1px solid #cbcbcb;
+		width: 100%;
+		height: 48px;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+	header p {
+		font-size: 18px;
+		font-weight: bold;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
 
-.sidebar {width: 100%; background: #f5f5f5;}
-.sidebar {width: 100%; background: #f5f5f5; border-left: 1px solid #cbcbcb;}
-.sidebar.left {border-left: none; border-right: 1px solid #cbcbcb;}
+/**
+	Sidebars
+	**/
+	.sidebar {
+		width: 100%;
+		background: #f5f5f5;
+	}
+	.sidebar {
+		width: 100%;
+		background: #f5f5f5;
+		border-left: 1px solid #cbcbcb;
+	}
+	.sidebar.left {
+		border-left: none;
+		border-right: 1px solid #cbcbcb;
+	}
 
-.sidebar ul {margin: 0; padding: 0;}
-.sidebar ul li {border-bottom: 1px solid #cbcbcb; cursor: pointer; padding: 10px 20px; font-size: 12px;}
+	.sidebar ul {
+		margin: 0;
+		padding: 0;
+	}
+	.sidebar ul li {
+		border-bottom: 1px solid #cbcbcb;
+		cursor: pointer;
+		padding: 10px 20px;
+		font-size: 12px;
+	}
 
-.sidebar ul li:first-child {padding: 0;}
-.sidebar ul li:first-child button {display: inline-block; padding: 0; margin: 0; border: none; width: 50%; vertical-align: middle; height: 40px; background: #f4f3f3;}
-.sidebar ul li:first-child button:first-child {border-right: 1px solid #cbcbcb;}
-.sidebar ul li:first-child button:hover {background: #00b8d1;}
-.sidebar ul li:first-child button:hover img {filter: brightness(0) invert(1);}
+	.sidebar ul li:first-child {padding: 0;}
+	.sidebar ul li:first-child button {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		border: none;
+		width: 50%;
+		vertical-align: middle;
+		height: 40px;
+		background: #f4f3f3;
+	}
+	.sidebar ul li:first-child button:first-child {border-right: 1px solid #cbcbcb;}
+	.sidebar ul li:first-child button:hover {background: #00b8d1;}
+	.sidebar ul li:first-child button:hover img {filter: brightness(0) invert(1);}
 
-.wrapper-editor {
-	background: #fff;
-	margin: 20px 0 60px;
-	padding: 20px;
-}
-#editor {
-	border: none;
-	position: relative;
-	font-size: 14px;
-}
+/**
+	Main area
+	**/
+	#main {overflow: auto;}
 
-#main {
-	overflow: auto;
-}
+/** 
+	Editor and user cursor
+	**/
+	.wrapper-editor {
+		background: #fff;
+		margin: 20px 0 60px;
+		padding: 20px;
+	}
+	#editor {
+		border: none;
+		position: relative;
+		font-size: 14px;
+		padding: 0;
+		min-height: 250px;
+	}
+	.customGridPlacement {
+		justify-content: center;
+		margin-top: 20px;
+	}
+	.realtimeWrapper {
+		position: relative;
+		margin-top: 30px;
+	}
+	.realtimeEditor {
+		padding-bottom: 5px;
+		min-height: 66px;
+		
+		border-bottom: 1px solid #ddd;
+		color: #009688;
+		-webkit-text-fill-color: rgba(0,0,0,0.65);
+	}
+	.realtimeEditor:focus {
+		outline: none;
+	}
+	.realtimeLabel {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: #111;
+		width: 100%;
+		font-size: 16px;
+		pointer-events: none;
+		color: rgba(0, 0, 0, 0.38);
+		-webkit-transition: 0.2s ease;
+			-ms-transition: 0.2s ease;
+				transition: 0.2s ease;
+	}
+	.realtimeWrapper.is-focused .realtimeLabel,
+	.realtimeWrapper.is-dirty .realtimeLabel,
+	.realtimeEditor:focus + label {
+		margin-top: -20px;
+		font-size: 12px;
+		color: #009688;
+	}
+	.realtimeLabel:after {
+		content: '';
+		background-color: #009688;
+		left: 45%;
+		width: 10px;
+		height: 2px;
+		visibility: hidden;
+		position: absolute;
+		bottom: 0;
+		-webkit-transition: 0.2s ease;
+			-ms-transition: 0.2s ease;
+				transition: 0.2s ease;
+	}
+	.realtimeWrapper.is-focused .realtimeLabel:after {
+		left: 0;
+		visibility: visible;
+		width: 100%;
+	}
+	.realtimeEditor:focus + label:after {
+		left: 0;
+		visibility: visible;
+		width: 100%;
+	}
 
-/* User cursor at editor */
-.customGridPlacement {
-	justify-content: center;
-	margin-top: 20px;
-}
+/**
+	Bootstrap's LG and up
+	**/
+	@media (min-width: 992px){
+		html,
+		body,
+		#main,
+		#main > .container-fluid,
+		#main > .container-fluid > .row,
+		#main > .container-fluid > .row .col-12,
+		.sidebar {height: 100%;}
+	}
 
-.realtimeWrapper {
-	position: relative;
-	margin-top: 30px;
-}
-
-.realtimeEditor {
-	padding-bottom: 5px;
-	min-height: 66px; 
-	border-bottom: 1px solid #ddd;
-	color: #009688;
-	-webkit-text-fill-color: rgba(0,0,0,0.65);
-}
-
-.realtimeEditor:focus {
-	outline: none;
-}
-
-.realtimeLabel {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	color: #111;
-	width: 100%;
-	font-size: 16px;
-	pointer-events: none;
-	color: rgba(0, 0, 0, 0.38);
-	-webkit-transition: 0.2s ease;
-		-ms-transition: 0.2s ease;
-			transition: 0.2s ease;
-}
-
-.realtimeWrapper.is-focused .realtimeLabel, .realtimeWrapper.is-dirty .realtimeLabel,
-.realtimeEditor:focus + label {
-	margin-top: -20px;
-	font-size: 12px;
-	color: #009688;
-}
-
- .realtimeLabel:after {
-	content: '';
-	background-color: #009688;
-	left: 45%;
-	width: 10px;
-	height: 2px;
-	visibility: hidden;
-	position: absolute;
-	bottom: 0;
-	-webkit-transition: 0.2s ease;
-		-ms-transition: 0.2s ease;
-			transition: 0.2s ease;
-}
-
-.realtimeWrapper.is-focused .realtimeLabel:after {
-	left: 0;
-	visibility: visible;
-	width: 100%;
-}
-
-.realtimeEditor:focus + label:after {
-	left: 0;
-	visibility: visible;
-	width: 100%;
-}
-
-@media (min-width: 992px){
-	html, body, #main, #main > .container-fluid, #main > .container-fluid > .row, #main > .container-fluid > .row .col-12, .sidebar {height: 100%;}
-}
-
-@media (max-width: 991px){
-	body {padding-top: 50px;}
-	header {position: fixed; top: 0; left: 0; z-index: 10;}
-	header p {font-size: 12px;}
-	.sidebar {display: none;}
-	.btn-sm {font-size: 11px;}
-}
+/**
+	Bootstrap's MD and down
+	**/
+	@media (max-width: 991px){
+		body {padding-top: 50px;}
+		header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 10;
+		}
+		header p {font-size: 12px;}
+		.sidebar {display: none;}
+		.btn-sm {font-size: 11px;}
+	}
