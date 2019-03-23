@@ -12,7 +12,7 @@ Clone this repository and execute:
 `npm install`
 
 Then, to start the server:
-`node start`
+`npm start`
 
 Now just go to http://localhost:2000 and se the project :)
 
