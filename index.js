@@ -3,14 +3,15 @@ var express 		= require('express');
 	app 			= express(),
 	http 			= require('http').Server(app),
 	io 				= require('socket.io')(http),
-	realtimeEditor 	= require('realtime-editor');	
-
-//Folders used in index.html
-app.use("/node_modules", express.static(__dirname + "/node_modules"));
-app.use(express.static(__dirname + '/public'));
+	realtimeEditor 	= require('realtime-editor');
 
 //App routing
 app.get('/', function (req, res) {
+
+	//Folders used in index.html
+	app.use("/node_modules", express.static(__dirname + "/node_modules"));
+	app.use(express.static(__dirname + '/public'));
+
 	res.sendFile(__dirname + '/public/index.html');
 });
 

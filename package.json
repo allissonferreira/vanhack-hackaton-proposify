@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "By doing a research, I discovered that one of the problems that users complain about Proposify, is the capability of multiple users editing the document at the same time. This project uses a javascript plugin (realtime-editor), socket.io and node.js to help users about this problem, making them capable of editing their propositions simultaneously.",
   "author": "Allisson Ferreira Soares Santos",
-  "contributors": [
-    {
-      "name": "T.A.K.E.",
-      "email": "take@takedesign.dk"
-    }
-  ],
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
