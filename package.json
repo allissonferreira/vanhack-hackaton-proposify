@@ -9,11 +9,12 @@
       "email": "take@takedesign.dk"
     }
   ],
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "express": "^4.13.4",
     "realtime-editor": "*"
-  },
-  "scripts": {
-    "start": "node index.js"
   }
 }
